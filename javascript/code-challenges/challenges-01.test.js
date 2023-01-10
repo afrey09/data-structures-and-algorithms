@@ -92,22 +92,28 @@ CHALLENGE 5
 Write a function named addValues that takes in an array and a value and pushes the value into the array. This function does not need a return statement.
 
 Then, write a function named addNumbers that takes in four arguments:
-  - A number to be added to an array
-  - An array into which the number should be added
-  - The number of times the number should be added
-  - A callback function to use to add the numbers to the array (Hint: you already defined it)
+  - A number to be added to an array->> num
+  - An array into which the number should be added ->> arr
+  - The number of times the number should be added ->> times
+  - A callback function to use to add the numbers to the array (Hint: you already defined it) ->> callback
 
 Within the addNumbers function, invoke the callback function as many times as necessary, based on the third argument of the addNumbers function.
 
 Return the modified array.
+
+! expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for (let i =0; i < times; i++){
+    callback(arr, num);
+  }
+
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -125,11 +131,27 @@ The inventory is formatted like this:
   { name: 'blueberries', available: false }
 ]
 
+
+inventory[1].name to look at pears
+
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
+
+! foreach to look at every object in that array
+! foreach returns nothing. So we must first create an empty array and then return that modified array
+! push available item to my array - how do I know if it is avaiable? The boolean ( true or false)
+! if statement needed
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  let listArr = [];
+
+  availableItems.forEach((item) => {
+    if(item.available){
+      listArr.push(item.name);
+    }
+  });
+  
+  return listArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
