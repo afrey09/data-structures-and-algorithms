@@ -121,24 +121,19 @@ Write a function named reversedString that takes in a string and returns a strin
 
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 
-! reduce (newStr, char)
-!  'A' + 'newStr' ->> 'A'
-!  'u' + 'A' ->> 'uA'
 
-! initialize and empty string
-! split - str.split() ->> ['A','u','d','r','e','y']
-! reduce((new string, char, idx) =>{
-!   return char + newStr
-!}, '')
 ------------------------------------------------------------------------------------------------ */
 
 
-const reversedString = (str) => {
+  const reversedString = (str) => {
 
-  return str.split('').reduce((newStr, char, idx)=>{
+  return str.split('').reduce((newStr, char)=>{
     return char + newStr;
-  },'')
+  },'');
+
 };
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
