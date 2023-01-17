@@ -38,6 +38,8 @@ CHALLENGE 2
 
 Write a function that appends ' The end.' to a string, and returns the modified string. The original source string should not be modified.
 
+!example found in class repo ReadMe
+
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => str + ' The end.';
@@ -56,9 +58,7 @@ appendFirstToLast(a);
 console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
-const appendFirstToLast = (arr) => {
-  // Solution code here...
-};
+const appendFirstToLast = (arr) => 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
