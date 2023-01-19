@@ -65,7 +65,7 @@ const sortByChildren = (charArray) => {
     } else {
       return a.house > b.house ? 1 : -1;
     }
-  })
+  });
 };
 
 
