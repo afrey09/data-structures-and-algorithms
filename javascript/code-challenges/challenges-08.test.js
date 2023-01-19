@@ -83,7 +83,9 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
+  let regexPattern = /\d/g;
+
+  return (regexPattern.test(input));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,7 +96,9 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-  // Solution code here...
+  let regexPattern =/(world)/g;
+
+  return (regexPattern.test(input));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -106,7 +110,9 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  let regexPattern = /[A-Z]\w+/g;
+
+  return str.match(regexPattern) || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,7 +122,7 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
