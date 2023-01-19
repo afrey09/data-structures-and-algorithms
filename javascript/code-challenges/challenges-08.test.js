@@ -6,6 +6,10 @@ CHALLENGE 1 - Review
 
 Write a function named sortByChildren that sorts the characters below by the number of children in each house (fewest to most). If a house has the same number of children, sort alphabetically by house name.
 
+! a.children.length < b.children.length
+! a.children.length > b.children.length
+
+! a.house b.house
 ------------------------------------------------------------------------------------------------ */
 let characters = [
   {
@@ -64,7 +68,8 @@ const sortByChildren = (charArray) => {
       }
     });
   };
-};
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
