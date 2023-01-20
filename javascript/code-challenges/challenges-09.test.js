@@ -8,7 +8,7 @@ using the 'reduce' method.
 
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
-const maxInArray = (arr) => arr.reduce((accumulator, value) => value > accumulator ? value: accumulator);
+const maxInArray = (arr) => arr.reduce((accumulator, value) => value > accumulator ? value : accumulator);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -16,13 +16,14 @@ Write a function named getCourseKeys that takes in the courseInfo object and ret
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
-const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+const courseInfo = {
+  name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
 
 const getCourseKeys = (obj) => {
-  return(Object.keys(obj));
+  return (Object.keys(obj));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,7 +35,7 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  return(Object.values(obj).includes(value));
+  return (Object.values(obj).includes(value));
 
 };
 
@@ -58,7 +59,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  let newArr =[];
+  let newArr = [];
   for (const [key, value] of Object.entries(obj)) {
     newArr.push(`${key}: ${value}`);
   }
@@ -135,7 +136,18 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  let children = false;
+
+  arr.forEach(person => {
+    if (person.name === character)
+      Object.keys(person).forEach((key, idx) => {
+        if (key === 'children') {
+          children = Object.values(person)[idx].length;
+        }
+      })
+  })
+
+  return children ? true : false;
 
 };
 
