@@ -7,14 +7,7 @@ Write a function called addTwo that takes in an array and adds two to every valu
 ------------------------------------------------------------------------------------------------ */
 
 const addTwo = (arr) => {
-
-  let arrAddTwo = [];
-
-  for(let i=0; i<arr.length; i++) {
-    arrAddTwo.push(arr[i] + 2);
-  }
-
-  return arrAddTwo;
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
