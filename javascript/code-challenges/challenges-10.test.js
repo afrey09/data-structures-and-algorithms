@@ -52,7 +52,8 @@ For example:
 
 return: 35
 ------------------------------------------------------------------------------------------------ */
-const totalSum = (matrix) => {
+const totalSum = (matrix) => matrix.flat().reduce((acc,value)=> acc + value);
+const totalSum2 = (matrix) => {
 
   let newTotal = 0;
   for (let i = 0; i < matrix.length; i++) {
