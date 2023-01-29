@@ -120,6 +120,10 @@ const gruffaloCrumble = {
   ]
 };
 
+//! recipe.ingredients
+//! forEach - push some value in the result array
+//! slice(find the space +1 <- to return what's after the slice) ->> gallons fresh water = withoutAmount
+//! slice(find the next space +1)->> return item = without the unit
 
 const listFoods = (recipe) => {
   let result = [];
