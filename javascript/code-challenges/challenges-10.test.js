@@ -8,8 +8,8 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str) {
-  let newArray= str.split('');
-  let finalArray=newArray.splice('');
+  let newArray = str.split('');
+  let finalArray = newArray.splice(-10);
   return finalArray;
 }
 
@@ -28,7 +28,14 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  let highestValue = 0;
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix.length; j++)
+      if (matrix[i][j] > highestValue) {
+        highestValue = matrix[i][j];
+      }
+  }
+  return highestValue;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,6 +53,19 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => matrix.flat().reduce((acc,value)=> acc + value);
+const totalSum2 = (matrix) => {
+
+  let newTotal = 0;
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      newTotal += matrix[i][j];
+    }
+  }
+  return newTotal;
+
+};
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -67,12 +87,26 @@ const seattleCenter = [7, 14, 19, 22, 15, 4, 23, 27, 28, 23, 1, 29];
 const capHill = [5, 85, 58, 51, 50, 13, 33, 32, 47, 94, 31, 62];
 const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 
+// cookie stores is nested array
+
+
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
 
+  let grandSales = [];
+
+  for (let i = 0; i < hoursOpen.length; i++) {
+    let hourlyTotal = 0;
+    for (let j = 0; j < stores.length; j++) {
+      hourlyTotal += stores[j][i];
+    }
+
+    grandSales.push(hourlyTotal);
+  }
+  return grandSales;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -85,7 +119,17 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+
+  let organizedData = [];
+
+  data.forEach((cookieValue, idx) => {
+    organizedData.push({
+      sales: `${cookieValue} cookies`,
+      time: hours[idx],
+    });
+  });
+
+  return organizedData;
 };
 
 /* ------------------------------------------------------------------------------------------------
