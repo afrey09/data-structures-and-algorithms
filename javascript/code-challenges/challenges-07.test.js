@@ -24,7 +24,8 @@ let starWarsPeople = [
   }
 ];
 
-const sortStarWarsCharacters = (starWarsArr) => starWarsArr.sort((a,b)=>b.height - a.height);
+const sortStarWarsCharacters = (starWarsArr) => starWarsArr.sort((a, b) => b.height - a.height);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -33,8 +34,10 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  // Solution code here...
+  arr.splice(idx, 3);
+  return arr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -42,10 +45,7 @@ CHALLENGE 3
 Write a function named joinArray that takes an array and joins all of the elements together in one string on a space.
 ------------------------------------------------------------------------------------------------ */
 
-const joinArray = (arr) => {
-  // Solution code here...
-};
-
+const joinArray = (arr) => arr.join(' ');
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -61,7 +61,10 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for (let index = 0; index < str.length; index++) {
+    result.push(str.slice(index));
+
+  } result.push('');
   return result;
 };
 
@@ -73,10 +76,7 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
-};
-
+const wordsToCharList = (arr) => arr.split('');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -88,6 +88,8 @@ Write a function named listFoods that takes in the recipe and returns a new arra
 Use slice for this function, maybe more than once. The Array.indexOf() method may also be helpful.
 
 Do not use split for this function.
+
+!code review
 ------------------------------------------------------------------------------------------------ */
 
 const gruffaloCrumble = {
@@ -121,7 +123,11 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(ingredient => {
+    let withoutAmount = ingredient.slice(ingredient.indexOf(' ') + 1);
+    let withoutUnit = withoutAmount.slice(withoutAmount.indexOf(' ') + 1);
+    result.push(withoutUnit);
+  });
   return result;
 };
 
