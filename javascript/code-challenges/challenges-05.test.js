@@ -11,9 +11,7 @@ should convert to ["Jane Doe", "James Bond"]
 Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
-const toLastNames = people => {
-  // Solution code here...
-};
+const toLastNames = people => people.map(element => element.firstName + ' ' + element.lastName);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -23,7 +21,7 @@ Write a function named addValues that, given an array of numbers as input, uses 
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr) => {
-  // Solution code here...
+  return arr.reduce((a, b) => a + b, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,7 +37,11 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-  // Solution code here...
+  let total = arr.reduce((totalValue, currentValue) => {
+    totalValue += currentValue.purchasePrice;
+    return totalValue;
+  }, 0);
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,9 +52,7 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => {
-  // Solution code here...
-};
+const countNumberOfElements = (arr) => arr.reduce(a => a + 1);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -111,7 +111,10 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  return arr.reduce((a, b) => {
+    a.push(b.name);
+    return a;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -125,12 +128,11 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 
-  const reversedString = (str) => {
+const reversedString = (str) => {
 
   return str.split('').reduce((newStr, char)=>{
     return char + newStr;
   },'');
-
 };
 
 
@@ -208,18 +210,18 @@ Write a function named countPrimeNumbers that, given an array elements as input,
 You are welcome to use the provided isPrime function.
 ------------------------------------------------------------------------------------------------ */
 
-const isPrime = (value) => {
-  for (let i = 2; i < value; i++) {
-    if (value % i === 0) {
-      return false;
-    }
-  }
-  return value > 1;
-};
+// const isPrime = (value) => {
+//   for (let i = 2; i < value; i++) {
+//     if (value % i === 0) {
+//       return false;
+//     }
+//   }
+//   return value > 1;
+// };
 
-const countPrimeNumbers = (arr) => {
-  // Solution code here...
-};
+// const countPrimeNumbers = (arr) => {
+//   // Solution code here...
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
