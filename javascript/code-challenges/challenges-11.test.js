@@ -19,7 +19,12 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj) {
-  // Solution code here...
+  let newArr = Object.keys(obj).map((key) => {
+    return (`<li>${key}: ${obj[key]}</li>`);
+
+  });
+  return newArr;
+
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,8 +38,15 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+  let count = 0;
+
+  input.forEach(x => {
+    count += x.filter(z => z === target).length;
+
+  });
+  return count;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -47,7 +59,7 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  return input.flat().reduce ((sum, curr) => sum + curr, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,7 +75,9 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  return input.map(newArr => {
+    return newArr.filter(e => typeof e === 'number' && e % 5 === 0).map(filteredElem => Math.pow(2, filteredElem));
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -129,7 +143,7 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  return data.filter(person => person.gender.includes('male')).map(character => character.name).join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
