@@ -163,21 +163,25 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  const helpCheck = (row1, col1, row2, col2, row3, col3) =>{
-    return board[row1][col1] === board[row2[col2]] !== '' &&
-    board[row2][col2] === board [row3][col3];
+
+  const helpCheck = (row1, col1, row2, col2, row3, col3) => {
+    return board[row1][col1] !== '' &&
+      board[row1[col1]] === board[row2][col2] &&
+      board[row2][col2] === board[row3][col3];
   };
 
-  if(helpCheck(0,0,0,1,0,2)) return true;
-  if(helpCheck(1,0,1,1,1,2)) return true;
-  if(helpCheck(2,0,2,1,2,2)) return true;
+  if (helpCheck(0, 0, 0, 1, 0, 2)) return true;
+  if (helpCheck(1, 0, 1, 1, 1, 2)) return true;
+  if (helpCheck(2, 0, 2, 1, 2, 2)) return true;
 
-  if(helpCheck(0,0,1,0,2,0)) return true;
-  if(helpCheck(0,1,1,1,2,1)) return true;
-  if(helpCheck(0,2,1,2,2,2)) return true;
+  if (helpCheck(0, 0, 1, 0, 2, 0)) return true;
+  if (helpCheck(0, 1, 1, 1, 2, 1)) return true;
+  if (helpCheck(0, 2, 1, 2, 2, 2)) return true;
 
-  if(helpCheck(0,0,2,1,2,2)) return true;
-  if(helpCheck(0,2,1,1,2,0)) return true;
+  if (helpCheck(0, 0, 1, 1, 2, 2)) return true;
+  if (helpCheck(0, 2, 1, 1, 2, 0)) return true;
+
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
