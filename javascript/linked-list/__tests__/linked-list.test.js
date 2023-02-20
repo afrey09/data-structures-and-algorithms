@@ -48,4 +48,13 @@ describe('Linked List', () => {
     expect(list.includes('orange')).toBeTruthy();
     expect(list.includes('blueberry')).toBeFalsy();
   });
+
+  it ('should append to end', () => {
+    const linked = new LinkedList();
+    linked.insertAfter('apple', 'end');
+
+    expect(linked.head.value).toEqual('end');
+  });
+
 });
+

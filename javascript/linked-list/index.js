@@ -12,6 +12,20 @@ class LinkedList {
     this.head.next = oldHead;
   }
 
+  insertAtTail(value, newValue){
+    let current = this.head;
+    while(current) {
+      if(current.value === value) {
+        let newNode = current.next;
+        current.next = newNode(newValue, newNode);
+        this.length++;
+        return this.length;
+      } else {
+        current = current.next;
+      }
+    }
+  }
+
   toString() {
     let current = this.head;
     let str = '';
