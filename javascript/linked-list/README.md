@@ -31,3 +31,9 @@ Collaborators: Jordan Covington and Joe Davitt
 insert - insert a value into the Linked List
 toString - returns a string representing the value stored in the Linked List
 includes - returns true if the value already is in Linked List
+
+## Collaborators
+
+Joe Davitt
+Jordan Covington
+Ty Aponte
