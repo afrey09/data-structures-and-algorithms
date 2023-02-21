@@ -3,6 +3,7 @@
 class LinkedList {
   constructor() {
     this.head = null;
+    this.length = 0;
   }
 
   insert(value) {
@@ -52,7 +53,27 @@ class LinkedList {
     return false;
 
   }
+
+  kthFromEnd(k){
+    if(k === null || k<0){
+      console.log('invalid value');
+    }
+    let current = this.head;
+    let length = 0;
+    while(current){
+      current = current.next;
+      length++;
+    }
+    let result = length -k - 1;
+    current = this.head;
+    while(result!==0){
+      current = current.next;
+      result--;
+    }
+    return current;
+  }
 }
+
 
 class Node {
   constructor(value, next = null) {
