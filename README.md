@@ -24,4 +24,6 @@ To run your tests
 
 Table of Contents:
 [Array Reverse](./javascript/ArrayReverse/README.md)
-[Array Insert Shift](./javascript/ArrayInsertShift.md)
+[Array Insert Shift](./javascript/ArrayInsertShift/README.md)
+[Array Binary Search](./javascript/ArrayBinarySearch/README.md)
+[Linked List](./javascript/linkedList/README.md)
