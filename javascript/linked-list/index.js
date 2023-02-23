@@ -13,6 +13,7 @@ class LinkedList {
     this.head.next = oldHead;
   }
 
+<<<<<<< HEAD
   insertAtTail(value, newValue){
     let current = this.head;
     while(current) {
@@ -25,6 +26,20 @@ class LinkedList {
         current = current.next;
       }
     }
+=======
+  append(value) {
+    if(!this.head){
+      this.insert(value);
+      return this.length;
+    }
+    let current = this.head;
+    while (current.next) {
+      current = current.next;
+    }
+    current.next = new Node(value);
+    this.length++;
+    return this.length;
+>>>>>>> 96a07d1 (tests passing)
   }
 
   toString() {
@@ -74,6 +89,22 @@ class LinkedList {
   }
 }
 
+const zipLists = (list1,list2) => {
+  let current1 = list1.head;
+  let current2 = list2.head;
+  let list3 = new LinkedList();
+  while(current1 || current2){
+    if(current1){
+      list3.append(current1.value);
+      current1 = current1.next;
+    }
+    if(current2){
+      list3.append(current2.value);
+      current2 = current2.next;
+    }
+  } return list3;
+};
+
 
 class Node {
   constructor(value, next = null) {
@@ -82,4 +113,4 @@ class Node {
   }
 }
 
-module.exports = LinkedList;
+module.exports = { LinkedList, zipLists };
