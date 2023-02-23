@@ -42,12 +42,21 @@ Return the node’s value that is k places from the tail of the linked list.
 You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
 ## Whiteboard Process
+![Code Challenge 6](assets/codechallenge6.png)
 ![Code Challenge 7](assets/codechallenge7.png)
+![Code Challenge 8](assets/codechallenge8.png)
 
 ## Approach & Efficiency
 pair programming
 
-Collaborator: Ash Uppal
+Collaborator:
+
+Ty Aponte
+Ash Uppal
+Joe Davitt
+Jordan Covington
+
+
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
