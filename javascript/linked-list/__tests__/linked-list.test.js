@@ -66,4 +66,13 @@ describe('Linked List', () => {
     expect(zipped.head.next.next.value).toEqual('orange');
   });
 
+
+  it ('should append to end', () => {
+    const linked = new LinkedList();
+    linked.insertAfter('apple', 'end');
+
+    expect(linked.head.value).toEqual('end');
+  });
+
 });
+
