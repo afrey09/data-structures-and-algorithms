@@ -45,10 +45,10 @@ class LinkedList {
 
 
 <<<<<<< HEAD
-  insertAtTail(value, newValue){
+  insertAtTail(value, newValue) {
     let current = this.head;
-    while(current) {
-      if(current.value === value) {
+    while (current) {
+      if (current.value === value) {
         let newNode = current.next;
         current.next = newNode(newValue, newNode);
         this.length++;
@@ -136,6 +136,31 @@ const zipLists = (list1, list2) => {
   } return list3;
 };
 
+class PseudoQueue {
+  constructor() {
+    this.stack1 = new Stack();
+    this.stack2 = new Stack();
+  }
+
+  enqueue(value) {
+    while (this.stack1.length !== 0) {
+      this.stack2.push(this.stack1.pop());
+    }
+    this.stack1.push(value);
+
+    while (this.stack2.length !== 0) {
+      this.stack1.push(this.stack2.pop());
+    }
+  }
+
+  dequeue() {
+    if (this.stack1.isEmpty()) {
+      return null;
+    }
+    let removedValue = this.stack1.pop();
+    return removedValue;
+  }
+}
 
 class Node {
   constructor(value, next = null) {
