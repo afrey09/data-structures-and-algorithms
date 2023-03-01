@@ -1,5 +1,7 @@
 'use strict';
 
+const { Queue } = require('./index');
+
 // class PseudoQueue {
 //   constructor() {
 //     this.stack1 = new Stack();
