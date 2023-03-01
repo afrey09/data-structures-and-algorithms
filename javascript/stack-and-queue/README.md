@@ -15,12 +15,18 @@ If pref is not "dog" or "cat" then return null.
 
 ## Whiteboard Process
 ![Code Challenge 12](assets/codechallenge12.png)
+![Code Challenge 13](assets/codechallenge13.png)
 
 
 ## Approach & Efficiency
-pair programming 
+pair programming
 
 ## Solution
 
+Collaborators:
 
+Marco Villafana
+Steve Grant
+Jordan Covington
+Joe Davitt
 

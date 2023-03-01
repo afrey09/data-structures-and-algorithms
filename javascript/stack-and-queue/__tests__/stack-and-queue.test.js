@@ -1,6 +1,7 @@
 'use strict';
 
-const { AnimalShelter } = require('../index');
+const { AnimalShelter, validateBrackets } = require('../index');
+
 
 describe('AnimalShelter', () => {
   it('Can successfully enqueue into a queue in Animal Shelter', () => {
@@ -41,4 +42,12 @@ describe('AnimalShelter', () => {
     let result = hs.dequeue('dog');
     expect(result).toBeNull();
   });
+  it('should be able to determine if brackets are balanced', () => {
+    let str1 = '(){}[]';
+    let str2 = '(()';
+
+    expect(validateBrackets(str1)).toBeTruthy();
+    expect(validateBrackets(str2)).tobBeFalsy();
+  });
+
 });

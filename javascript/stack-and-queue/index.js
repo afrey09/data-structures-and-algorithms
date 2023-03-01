@@ -1,62 +1,49 @@
 'use strict';
 
-class PseudoQueue {
-  constructor() {
-    this.stack1 = new Stack();
-    this.stack2 = new Stack();
-  }
+// class PseudoQueue {
+//   constructor() {
+//     this.stack1 = new Stack();
+//     this.stack2 = new Stack();
+//   }
 
-  enqueue(value) {
-    while (this.stack1.length !== 0) {
-      this.stack2.push(this.stack1.pop());
-    }
-    this.stack1.push(value);
+//   enqueue(value) {
+//     while (this.stack1.length !== 0) {
+//       this.stack2.push(this.stack1.pop());
+//     }
+//     this.stack1.push(value);
 
-    while (this.stack2.length !== 0) {
-      this.stack1.push(this.stack2.pop());
-    }
-  }
+//     while (this.stack2.length !== 0) {
+//       this.stack1.push(this.stack2.pop());
+//     }
+//   }
 
-  dequeue() {
-    if (this.stack1.isEmpty()) {
-      return null;
-    }
-    let removedValue = this.stack1.pop();
-    return removedValue;
-  }
-}
+//   dequeue() {
+//     if (this.stack1.isEmpty()) {
+//       return null;
+//     }
+//     let removedValue = this.stack1.pop();
+//     return removedValue;
+//   }
+// }
 
 class Stack {
   constructor() {
-    this.top = null;
-    this.last = null;
-
+    this.value = [];
   }
   push(value) {
-    let newNode = new Node(value);
-    if (!this.top) {
-      this.top = newNode;
-    } else {
-      var temp = this.top;
-      this.top = newNode;
-      newNode.next = temp;
-    }
-    return this.top;
+    this.value.push(value);
   }
   pop() {
-    if (!this.top) return null;
-    let current = this.top;
-    if (this.top === this.last) {
-      this.last = null;
-    } return current.value;
+    if (this.value.length === 0) {
+      return null;
+    }
+    return this.value.pop();
   }
-
   peek() {
-    if (!this.top) return null;
-    return this.top.value;
+    return this.value[this.value.length - 1];
   }
   isEmpty() {
-    return this.top === null;
+    return this.value.length === 0;
   }
 }
 
@@ -134,9 +121,48 @@ class Node {
 }
 
 
+function validateBrackets(str) {
+  let stack = new Stack();
+
+  for (let i = 0; i < str.length; i++) {
+    let temp = str[i];
+    if (temp === '(' || temp === '[' || temp === '{') {
+      stack.push(temp);
+    }
+
+    if (temp === ')') {
+      let check = stack.pop();
+      if (check !== '(') {
+        return false;
+      }
+    }
+    if (temp === ']') {
+      let check = stack.pop();
+      if (check !== '[') {
+        return false;
+      }
+    }
+    if (temp === '}') {
+      let check = stack.pop();
+
+      if (check !== '{') {
+        return false;
+      }
+    }
+  }
+  if (stack.pop() !== null) {
+    return false;
+  }
+  return true;
+
+}
+
+
 
 module.exports = {
   Stack,
   Queue,
-  PseudoQueue,
-  AnimalShelter };
+  //PseudoQueue,
+  AnimalShelter,
+  validateBrackets,
+};
