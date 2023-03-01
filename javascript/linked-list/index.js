@@ -67,6 +67,7 @@ class LinkedList {
     }
   }
 
+
   toString() {
     let current = this.head;
     let str = '';

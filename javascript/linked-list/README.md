@@ -45,6 +45,7 @@ You have access to the Node class and all the properties on the Linked List clas
 ![Code Challenge 6](assets/codechallenge6.png)
 ![Code Challenge 7](assets/codechallenge7.png)
 ![Code Challenge 8](assets/codechallenge8.png)
+![Code Challenge 11](assets/codechallenge11.png)
 
 ## Approach & Efficiency
 pair programming
