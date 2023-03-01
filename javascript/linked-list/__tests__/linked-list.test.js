@@ -1,7 +1,7 @@
 'use strict';
 
 // Require our linked list implementation
-const { LinkedList, zipLists } = require('../index');
+const { LinkedList, zipLists, Stack } = require('../index');
 
 
 describe('Linked List', () => {
@@ -68,10 +68,40 @@ describe('Linked List', () => {
 
 
   it ('should append to end', () => {
-    const linked = new LinkedList();
-    linked.insertAfter('apple', 'end');
+    const list = new LinkedList();
+    list.insertAtTail('apple', 'end');
 
-    expect(linked.head.value).toEqual('end');
+    expect(list.tail.value).toEqual('end');
+  });
+
+  it('Can successfully push onto a stack', () => {
+    let stack = new Stack();
+    stack.push(1);
+
+    expect(stack.top.value).toEqual(1);
+
+  });
+
+  it('Can successfully push multiple onto a stack', () => {
+    let stack = new Stack();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+
+    expect(stack.top.value).toEqual(3);
+    expect(stack.top.next.value).toEqual(2);
+    expect(stack.top.next.next.value).toEqual(1);
+  });
+
+  it('Can successfully pop off of a stack', () => {
+    let stack = new Stack();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    let poppedValue = stack.pop();
+
+    expect(poppedValue).toEqual(3);
+    expect(stack.top.value).toEqual(2);
   });
 
 });
