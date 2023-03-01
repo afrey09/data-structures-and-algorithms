@@ -44,35 +44,6 @@ class LinkedList {
   }
 
 
-<<<<<<< HEAD
-  insertAtTail(value, newValue) {
-    let current = this.head;
-    while (current) {
-      if (current.value === value) {
-        let newNode = current.next;
-        current.next = newNode(newValue, newNode);
-        this.length++;
-        return this.length;
-      } else {
-        current = current.next;
-      }
-    }
-=======
-  append(value) {
-    if(!this.head){
-      this.insert(value);
-      return this.length;
-    }
-    let current = this.head;
-    while (current.next) {
-      current = current.next;
-    }
-    current.next = new Node(value);
-    this.length++;
-    return this.length;
->>>>>>> 96a07d1 (tests passing)
-  }
-
   toString() {
     let current = this.head;
     let str = '';
@@ -135,32 +106,6 @@ const zipLists = (list1, list2) => {
     }
   } return list3;
 };
-
-class PseudoQueue {
-  constructor() {
-    this.stack1 = new Stack();
-    this.stack2 = new Stack();
-  }
-
-  enqueue(value) {
-    while (this.stack1.length !== 0) {
-      this.stack2.push(this.stack1.pop());
-    }
-    this.stack1.push(value);
-
-    while (this.stack2.length !== 0) {
-      this.stack1.push(this.stack2.pop());
-    }
-  }
-
-  dequeue() {
-    if (this.stack1.isEmpty()) {
-      return null;
-    }
-    let removedValue = this.stack1.pop();
-    return removedValue;
-  }
-}
 
 class Node {
   constructor(value, next = null) {
