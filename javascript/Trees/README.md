@@ -13,3 +13,7 @@
 Collaborators:
 
 Udemy videos - Datastructures and Algorithms
+Jordan Covington
+Joe Davitt
+Yen Xiong Yuan
+Ty Aponte
