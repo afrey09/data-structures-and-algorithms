@@ -27,3 +27,5 @@ Table of Contents:
 [Array Insert Shift](./javascript/ArrayInsertShift/README.md)
 [Array Binary Search](./javascript/ArrayBinarySearch/README.md)
 [Linked List](./javascript/linkedList/README.md)
+[Stacks and Queues](.javascript/stack-and-queue/README.md)
+[Trees](./javascript/Trees/README.md)
