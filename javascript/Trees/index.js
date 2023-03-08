@@ -146,5 +146,29 @@ function breadthFirst(tree) {
   return result;
 }
 
-module.exports = { Node, BinaryTree, BST, breadthFirst };
+function fizzBuzzTree(tree) {
+  let newTree = tree;
+  let current = newTree.root;
+
+  const traverse = (node) => {
+    if (node.value % 5 === 0 && node.value % 3 === 0) {
+      node.value = 'FizzBuzz';
+    } else if (node.value % 3 === 0) {
+      node.value = 'Fizz';
+    } else if (node.value % 5 === 0) {
+      node.value = 'Buzz';
+    } else {
+      node.value = node.value.toString();
+    }
+    if (node.left) {
+      traverse(node.left);
+    }
+    if (node.right) {
+      traverse(node.right);
+    }
+  };
+  traverse(current);
+  return newTree;
+}
+module.exports = { Node, BinaryTree, BST, breadthFirst, fizzBuzzTree };
 

@@ -21,6 +21,7 @@ Return: list of all values in the tree, in the order they were encountered
 ## Whiteboard Process
 ![Code Challenge 16](assets/codechallenge16.png)
 ![Code Challenge 17](assets/codechallenge17.png)
+![Code Challenge 18](assets/codechallenge18.png)
 
 ## Approach & Efficiency
 mob programming
