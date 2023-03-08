@@ -1,7 +1,7 @@
 'use strict';
 
 
-const { Node, Tree, BST, breadthFirst } = require('./index');
+const { Node, Tree, BST, breadthFirst, fizzBuzzTree } = require('./index');
 
 describe('Trees', () => {
   let tree = new Tree();
@@ -99,5 +99,21 @@ describe('Binary Search Trees', () => {
 
   });
 
+  it('fizzbuzz works', () => {
+    let tree = new Tree();
+    tree.root = new Node(5);
+    tree.root.left = new Node(1);
+    tree.root.right = new Node(8);
+    tree.root.left.left = new Node(10);
+    tree.root.left.right = new Node(15);
 
+    let test = fizzBuzzTree(tree);
+    expect(test.root.value).toEqual('Buzz');
+    expect(test.root.left.value).toEqual('1');
+    expect(test.root.right.value).toEqual('8');
+    expect(test.root.left.left.value).toEqual('Buzz');
+    expect(test.root.left.right.value).toEqual('FizzBuzz');
+
+  });
 });
+
