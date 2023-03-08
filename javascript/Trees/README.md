@@ -11,8 +11,16 @@ Arguments: none
 Returns: number
 Find the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
 
+CC 17:
+Breadth-first Traversal.
+
+Write a function called breadth first
+Arguments: tree
+Return: list of all values in the tree, in the order they were encountered
+
 ## Whiteboard Process
 ![Code Challenge 16](assets/codechallenge16.png)
+![Code Challenge 17](assets/codechallenge17.png)
 
 ## Approach & Efficiency
 mob programming
@@ -23,27 +31,4 @@ Jordan Covington
 Joe Davitt
 Ken Holt
 Ty Aponte
-
-## Solution
-<!-- Show how to run your code, and examples of it in action -->
-=======
-# Trees
-<!-- Short summary or background information -->
-
-## Challenge
-<!-- Description of the challenge -->
-
-## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-
-## API
-<!-- Description of each method publicly available in each of your trees -->
-
-Collaborators:
-
-Udemy videos - Datastructures and Algorithms
-Jordan Covington
-Joe Davitt
-Yen Xiong Yuan
-Ty Aponte
-
+Jonathan Staib
