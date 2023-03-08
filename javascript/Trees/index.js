@@ -51,7 +51,29 @@ class BinaryTree {
     traverse(this.root);
     return results;
   }
-  
+
+  getMax() {
+    let results = this.root.value;
+
+    const traverse = (node) => {
+      if (node.left) {
+        if (node.left.value > results) {
+          results = node.left.value;
+        }
+        traverse(node.left);
+      }
+
+      if (node.right) {
+        if (node.right.value > results) {
+          results = node.right.value;
+        }
+        traverse(node.right);
+      }
+    };
+    traverse(this.root);
+    return results;
+  }
+
 }
 
 class BST extends BinaryTree {
@@ -106,4 +128,23 @@ class BST extends BinaryTree {
   }
 
 }
-module.exports = { Node, BinaryTree, BST };
+
+function breadthFirst(tree) {
+  let result = [];
+  let queue = [tree.root];
+
+  while (queue.length > 0) {
+    const current = queue.shift();
+    result.push(current.value);
+    if (current.left !== null) {
+      queue.push(current.left);
+    }
+    if (current.right !== null) {
+      queue.push(current.right);
+    }
+  }
+  return result;
+}
+
+module.exports = { Node, BinaryTree, BST, breadthFirst };
+
