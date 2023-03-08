@@ -51,6 +51,7 @@ class BinaryTree {
     traverse(this.root);
     return results;
   }
+
   getMax() {
     let results = this.root.value;
 
@@ -72,6 +73,7 @@ class BinaryTree {
     traverse(this.root);
     return results;
   }
+
 }
 
 class BST extends BinaryTree {
@@ -124,6 +126,7 @@ class BST extends BinaryTree {
     return contains;
 
   }
+
 }
 
 function breadthFirst(tree) {
@@ -144,3 +147,4 @@ function breadthFirst(tree) {
 }
 
 module.exports = { Node, BinaryTree, BST, breadthFirst };
+

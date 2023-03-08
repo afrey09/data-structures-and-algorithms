@@ -1,3 +1,4 @@
+
 # Challenge Summary
 
 CC 16:
@@ -25,3 +26,24 @@ Ty Aponte
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
+=======
+# Trees
+<!-- Short summary or background information -->
+
+## Challenge
+<!-- Description of the challenge -->
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+## API
+<!-- Description of each method publicly available in each of your trees -->
+
+Collaborators:
+
+Udemy videos - Datastructures and Algorithms
+Jordan Covington
+Joe Davitt
+Yen Xiong Yuan
+Ty Aponte
+
